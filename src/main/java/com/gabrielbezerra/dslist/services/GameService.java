@@ -40,4 +40,22 @@ public class GameService {
  		return dto;
 	}
 
+	public Game fromGameDTO(GameDTO gameDto) {
+		return new Game(gameDto.getId(), 
+				gameDto.getTitle(), 
+				gameDto.getYear(), 
+				gameDto.getGenre(), 
+				gameDto.getPlatforms(), 
+				gameDto.getScore(), 
+				gameDto.getImgUrl(), 
+				gameDto.getShortDescription(), 
+				gameDto.getLongDescription() 
+		);
+	}
+	
+	public Game insert(Game game) {
+		
+		return gameRepository.save(game);
+		
+	}
 }
